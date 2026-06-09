@@ -14,8 +14,15 @@ config:
 modes:
   - attract
   - base
+  - bumpers
+  - hurryup
 
 playfields:
   playfield:
     default_source_device: bd_trough
     tags: default
+
+virtual_platform_start_active_switches:
+  - s_trough_1
+  - s_trough_2
+  - s_trough_3
