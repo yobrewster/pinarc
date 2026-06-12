@@ -6,6 +6,17 @@
 # drivers, ball devices, hardware platforms, and more. You can
 # include everything here, or create sub-config files to be
 # imported and merged with this one.
+hardware:
+  platform: opp
+  driverboards: gen2
+
+opp:
+  ports: com4, com5
+
+psus:
+  default:
+    release_wait_ms: 20   
+
 config:
   - config_ball_devices.yaml
   - config_coils.yaml
@@ -16,13 +27,44 @@ modes:
   - base
   - bumpers
   - hurryup
+  - multiball
 
 playfields:
   playfield:
-    default_source_device: bd_trough
+    default_source_device: bd_plunger
     tags: default
 
+flippers:
+  left_flipper:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_left_flipper
+
+  right_flipper:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_right_flipper
+
+drop_targets:
+  a:
+    switch: s_drop_target_a
+  b:
+    switch: s_drop_target_b
+  c:
+    switch: s_drop_target_c
+  d:
+    switch: s_drop_target_d
+  e:
+    switch: s_drop_target_e
+    
+drop_target_banks:
+  abcde:
+    drop_targets: a, b, c, d, e
+    reset_coils: c_droptargets
+    reset_on_complete: 1s
+    max_reset_attempts: 1
+    
 virtual_platform_start_active_switches:
-  - s_trough_1
-  - s_trough_2
-  - s_trough_3
+  - s_trough_ball1
+  - s_trough_ball2
+  - s_trough_ball3

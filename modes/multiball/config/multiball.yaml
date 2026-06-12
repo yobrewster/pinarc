@@ -1,0 +1,53 @@
+#config_version=6
+
+mode:
+  start_events: ball_started
+  stop_events: ball_ended
+  priority: 200
+
+event_player:
+  mode_multiball_started:
+    reset_vuk_counter
+
+  player_vuk_hits{value<3}:
+    eject_vuk
+
+  player_vuk_hits{value==3}:
+    start_vuk_multiball
+
+  multiball_vuk_mb_started:
+    reset_vuk_counter
+
+variable_player:
+  player_turn_started:
+    vuk_hits:
+      int: 0
+
+  balldevice_bd_vuk_ball_enter:
+    vuk_hits: 1
+
+  reset_vuk_counter:
+    vuk_hits:
+      int: 0
+
+coil_player:
+  eject_vuk:
+    c_vuk: pulse
+
+multiballs:
+  vuk_mb:
+    start_events: start_vuk_multiball
+    ball_count: 3
+    ball_count_type: total
+
+ball_saves:
+  vuk_mb_save:
+    enable_events: start_vuk_multiball
+    active_time: 10s
+    balls_to_save: -1
+
+slide_player:
+  start_vuk_multiball: 
+    vukmultiball:
+      action: play
+      expire: 2s

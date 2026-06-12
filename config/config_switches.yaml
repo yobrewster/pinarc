@@ -1,29 +1,77 @@
 #config_version=6
 
 switches:
-  # Playfield Switches
-  s_bumper_left:
-    number:
-  s_bumper_right:
-    number:
-  s_left_lane:
-    number:
-  # Cabinet Switches
-  s_start:
-    number:
-    tags: start
-  s_flipper_left:
-    number:
-    tags: left_flipper
-  s_flipper_right:
-    number:
+  s_left_flipper:
+    number: 0-0-27
+    tags: left_flipper                                                   
+  s_right_flipper:
+    number: 0-0-26
     tags: right_flipper
-  # Trough Switches
-  s_trough_1:
-    number:
-  s_trough_2:
-    number:
-  s_trough_3:
-    number:
-  s_plunger_lane:
-    number:
+  s_white_target:
+    number: 0-0-2
+  s_plunger:
+    number: 0-0-1
+  s_drop_target_a:
+    number: 0-0-3
+  s_drop_target_b:
+    number: 0-0-8
+  s_drop_target_c:
+    number: 0-0-9
+  s_drop_target_d:
+    number: 0-0-10
+  s_drop_target_e:
+    number: 0-0-11
+  s_frontbumper:
+    number: 0-0-25
+  s_backbumper:
+    number: 0-0-24
+  s_farleftlane:
+    number: 0-0-18
+  s_leftlane:
+    number: 0-0-19
+  s_rightlane:
+    number: 0-0-17    
+  s_backrolloverleft:
+    number: 1-0-1
+  s_backrolloverright:
+    number: 1-0-2
+  s_scoop:
+    number: 0-0-16
+  s_blue_target_m:
+    number: 1-0-24
+  s_blue_target_t:
+    number: 1-0-25
+  s_blue_target_b:
+    number: 1-0-26
+  s_drop_switch_a:
+    number: 1-0-27
+  s_drop_switch_b:
+    number: 1-0-28
+  s_drop_switch_c:
+    number: 1-0-29
+  s_drop_switch_d:
+    number: 1-0-30
+  s_spinner:
+    number: 1-0-31
+  s_trough_jam:
+    number: 1-0-11
+    type: NC
+  s_trough_ball1:
+    number: 1-0-10
+    type: NC
+  s_trough_ball2:
+    number: 1-0-8
+  s_trough_ball3:                     
+    number: 1-0-3
+  s_vuk:
+    number: 1-0-9
+    type: NC
+  s_left_sling:
+    number: 1-0-22
+  s_right_sling:
+    number: 1-0-23    
+  s_start:
+    number: 1-0-21
+    tags: start
+  s_launch:
+    number: 1-0-20

@@ -8,17 +8,76 @@ mode:
   stop_events: ball_will_end
   priority: 100
 
+ball_saves:
+  default:
+    active_time: 10s
+    hurry_up_time: 2s
+    auto_launch: true
+    balls_to_save: 1
+
 event_player:
   mode_base_started:
     - start_mode_bumpers
   mode_base_will_stop:
     - stop_mode_bumper
-  left_lane_hit:
+  scoop_hit:
     - start_mode_hurryup
 
 shots:
-  left_lane:
-    switches: s_left_lane
+  scoop:
+    switches: s_scoop
 
 slide_player:
   mode_base_started: base_slide
+
+variable_player:
+  s_farleftlane_active:
+    score: 100
+  s_leftlane_active:
+    score: 500
+  s_rightlane_active:
+    score: 100
+  s_left_sling_active:
+    score: 25
+  s_right_sling_active:
+    score: 25
+  s_drop_target_a_active:
+    score: 250
+  s_drop_target_b_active:
+    score: 250
+  s_drop_target_c_active:
+    score: 250
+  s_drop_target_d_active:
+    score: 250
+  s_drop_target_e_active:
+    score: 250
+  s_kickback2_active:
+    score: 1000
+  s_captiveball_active:
+    score: 500
+  s_blue_target_m_active:
+    score: 50
+  s_blue_target_t_active:
+    score: 50
+  s_blue_target_b_active:
+    score: 50
+  s_drop_switch_a_active:
+    score: 100
+  s_drop_switch_b_active:
+    score: 100
+  s_drop_switch_c_active:
+    score: 100
+  s_drop_switch_d_active:
+    score: 100
+  s_spinner_active:
+    score: 10
+  s_backrolloverleft_active:
+    score: 1000
+  s_backrolloverright_active:
+    score: 1000
+  s_white_target_active:
+    score: 600  
+  balldevice_bd_vuk_ball_eject_attempt:
+    score: 750    
+  balldevice_bd_scoop_ball_eject_attempt:
+    score: 1000      

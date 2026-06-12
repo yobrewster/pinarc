@@ -1,5 +1,44 @@
 #config_version=6
 
 coils:
+  c_autoplunger:
+    number: 0-0-8
+    default_pulse_ms: 16
   c_trough_eject:
-    number:
+    number: 0-0-9
+    default_pulse_ms: 30
+  c_flipper_right_main:
+    number: 0-0-13  # white
+    default_pulse_ms: 25
+  c_flipper_right_hold:
+    number: 0-0-14 # yellow
+    allow_enable: true
+  c_flipper_left_main:
+    number: 0-0-4  # white
+    default_pulse_ms: 25
+  c_flipper_left_hold:
+    number: 0-0-3 # yellow
+    allow_enable: true
+  c_droptargets:
+    number: 0-0-12 #green
+    default_pulse_ms: 13
+  c_frontbumper:
+    number: 0-0-6 #red
+    default_pulse_ms: 20
+  c_backbumper:
+    number: 0-0-5 #red
+    default_pulse_ms: 20
+  c_vuk:
+    number: 0-0-15 #red
+    default_pulse_ms: 15
+  c_scoop:
+    number: 0-0-7
+    default_pulse_ms: 25
+
+autofire_coils:
+  front_bumper:
+    coil: c_frontbumper
+    switch: s_frontbumper
+  back_bumper:  
+    coil: c_backbumper
+    switch: s_backbumper    

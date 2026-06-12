@@ -6,15 +6,15 @@ mode:
   priority: 200
 
 shots:
-  bumper_left:
-    switch: s_bumper_left
-  bumper_right:
-    switch: s_bumper_right
+  bumper_front:
+    switch: s_frontbumper
+  bumper_back:
+    switch: s_backbumper
 
 shot_groups:
   bumpers:
-    shots: bumper_left, bumper_right
+    shots: bumper_front, bumper_back
 
 variable_player:
   bumpers_hit:
-    score: 1000
+    score: 150
